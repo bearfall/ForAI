@@ -221,20 +221,6 @@ public class TestCharacter : MonoBehaviour
 
 	public void EnemyMovePosition(int targetXPos, int targetZPos)
 	{
-		// 移動物體
-		// 獲取目標坐標的相對坐標
-		//Vector3 movePos = Vector3.zero; // (0.0f, 0.0f, 0.0f)でVector3で初期化
-		//movePos.x = targetXPos - xPos; // x方向的相對距離
-		//movePos.z = targetZPos - zPos; // z方向的相對距離
-		//transform.position += movePos;
-
-
-
-
-
-
-
-
 
 		Vector3 enemyNowPosition = new Vector3(targetXPos, 0, targetZPos);
 		var b = PartnerPosition.partnerPosition.Exists(n => n == enemyNowPosition); // <= b == true
@@ -386,7 +372,7 @@ public class TestCharacter : MonoBehaviour
 
 		//moveButton.gameObject.SetActive(true);
 		EnemyPath.button = true;//將"移動"Button顯示出來
-
+		enemyPath.ResetResults();
 		//TestCharacter.ChessBoard = false; //移動完畢後,將隱藏大棋盤的bool回歸初值(false)
 
 

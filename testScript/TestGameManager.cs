@@ -93,6 +93,7 @@ public class TestGameManager : MonoBehaviour
 		{
 			// 自分のターン：開始時
 			case Phase.MyTurn_Start:
+
 				// 取消選擇所有塊
 				testMapManager.AllselectionModeClear();
 				// 將塊顯示為選中
@@ -334,7 +335,7 @@ public class TestGameManager : MonoBehaviour
 
 	private void EnemyCommand()
 	{
-		reachableBlocks.Clear();
+		
 		// 生存中の敵キャラクターのリストを作成する
 		var enemyCharas = new List<TestCharacter>(); // 敵キャラクターリスト
 		foreach (TestCharacter charaData in testCharactersManager.testCharacters)
@@ -342,6 +343,7 @@ public class TestGameManager : MonoBehaviour
 			if (charaData.isEnemy)
 			{
 				enemyCharas.Add(charaData);
+				
 			}
 		}
         foreach (var item in enemyCharas)
@@ -357,9 +359,10 @@ public class TestGameManager : MonoBehaviour
 			print(actionPlan.charaData.name);
 			// 敵キャラクター移動処理
 			actionPlan.charaData.EnemyMovePosition(actionPlan.toMoveBlock.xPos, actionPlan.toMoveBlock.zPos);
-			// 敵キャラクター攻撃処理
-			// (移動後のタイミングで攻撃開始するよう遅延実行)
-			reachableBlocks.Clear();
+            // 敵キャラクター攻撃処理
+            // (移動後のタイミングで攻撃開始するよう遅延実行)
+            
+			//reachableBlocks.Clear();
 			DOVirtual.DelayedCall(
 				2.5f, // 遅延時間(秒)
 				() =>

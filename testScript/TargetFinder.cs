@@ -39,6 +39,7 @@ public static class TargetFinder
 			
 			var enemyPath = enemyData.GetComponent<EnemyPath>();
 			
+			
 			reachableBlocks = enemyPath.StartEnemypath();
 			
 			// それぞれの移動可能な場所ごとの処理

@@ -18,6 +18,8 @@ public class EnemyPath : MonoBehaviour
 	public GameObject chessBoard; //這個用來放棋盤基底(BigChessBoard)
 	public Button moveButton;
 	private TestMapBlock testMapBlock;
+
+   
 	public List<TestMapBlock> results = new List<TestMapBlock>();
 
 
@@ -54,9 +56,8 @@ public class EnemyPath : MonoBehaviour
 	{
 		//PlayerPosition = this.transform.position;	//用PlayerPosition儲存角色目前的位置
 		CanMove = m;    //把CanMove設定成最大移動數
-
-		var results = new List<TestMapBlock>();
-	}
+        
+    }
 
 	//--------------------------------------------------------------------------------------------------
 
@@ -402,6 +403,10 @@ public class EnemyPath : MonoBehaviour
 		mCount.Clear(); //清空儲存 m 值的陣列
 	}
 
+	public void ResetResults()
+	{
+		results.Clear();
+	}
 	//---------------------------------------------------------------------------------------
 
 }
