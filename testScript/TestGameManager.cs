@@ -340,15 +340,21 @@ public class TestGameManager : MonoBehaviour
 		foreach (TestCharacter charaData in testCharactersManager.testCharacters)
 		{// 全生存キャラクターから敵フラグの立っているキャラクターをリストに追加
 			if (charaData.isEnemy)
+			{
 				enemyCharas.Add(charaData);
-
+			}
 		}
+        foreach (var item in enemyCharas)
+        {
+			print(item.name);
+        };
 
 		// 攻撃可能なキャラクター・位置の組み合わせの内１つをランダムに取得
 		var actionPlan = TargetFinder.GetRandomActionPlan(testMapManager, testCharactersManager, enemyCharas);
 		// 組み合わせのデータが存在すれば攻撃開始
 		if (actionPlan != null)
 		{
+			print(actionPlan.charaData.name);
 			// 敵キャラクター移動処理
 			actionPlan.charaData.EnemyMovePosition(actionPlan.toMoveBlock.xPos, actionPlan.toMoveBlock.zPos);
 			// 敵キャラクター攻撃処理
